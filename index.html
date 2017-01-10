@@ -10,22 +10,12 @@
 
 <body>
 
-    <input type="text" id="searchBar" placeholder="Search for something on Wikipedia">
-    <i id="quitSearchCross" class="fa fa-times" aria-hidden="true"></i>
+        <div id="magnifyingGlassStick"></div>
+        <input class="centeredSearchBar squishedSearchBar" type="text" id="searchBar">
+    <p id="clicktostartsearch"> Click to Start the Search </p>
 
-    
-    <h1> You Searched for "<span id="searchQuery"></span>"</h1>
-    <ul id="searchResults">
-        <li>
-          <a href="" target="blank">
-            <p> Phill collins </p>
-            <p> Phil Collins is an English song writer, visionary, instrumentalist who embeds meaning into his songs.
-                he sings about hurt and how irrational people are. </p>
-            </a>
-        </li>
-    </ul>
-    
-
+    <i class="centeredCross" id="cancelCross" class="fa fa-times hidden" aria-hidden="true"></i>
+    <h1 id="youSearchedFor" class="hidden"></h1>
 
 </body>
 

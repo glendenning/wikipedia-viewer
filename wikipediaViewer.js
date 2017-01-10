@@ -1,9 +1,10 @@
-
+// ELEMENT DECLARATIONS
 const searchBar = document.getElementById('searchBar');
 const searchResults = document.getElementById('searchResults');
 const youSearchedFor = document.getElementById('searchQuery');
-var jsonSearchData;
+const magnifyingGlassStick = document.getElementById('magnifyingGlassStick');
 
+// FUNCTIONS
 
 function search() {
 
@@ -39,7 +40,7 @@ function displaySearchResults (query, titles, descriptions, hyperlinks) {
 	for (var i=0; i < titles.length; i++) {
 
 		var wikipediaItemString = `
-			<li>
+			<li >
 			  <a href="${ hyperlinks[i] }" target="blank">
 			    <p> ${ titles[i] } </p>
 			    <p> ${ descriptions[i] } </p>
@@ -48,27 +49,39 @@ function displaySearchResults (query, titles, descriptions, hyperlinks) {
 		`;
 		searchResultsString += wikipediaItemString;
 	}
-	
+
 	youSearchedFor.visibility = "visible";
 	searchResults.visibility = "visible";
 
-	youSearchedFor.innerHTML = query;
+	youSearchedFor.innerHTML = "You Searched For \""+query+"\"";
 	searchResults.innerHTML = searchResultsString;
 
 };
 
+// EVENT LISTENERS
 
 searchBar.addEventListener("keyup", function(event) {
-    event.preventDefault();
+	event.preventDefault();
     //if the return key is pressed (which has a keycode of 13, click the)
     if (event.keyCode == 13) {
-        search();
+    	search();
+
+    	if (searchBar.className.includes("centeredSearchBar")) {
+    		searchBar.className = "";
+    	//the searchbar will move upwards to the top of the screen now. Want the
+    	//magnifying glass stick not just be behind it. Want it hidden completely.
+    	magnifyingGlassStick.style.transition = "none"
+    	magnifyingGlassStick.style.visibility = "hidden";
     }
+}
 });
 
+searchBar.addEventListener("click", function(event) {
+    // if the div is squished when it is clicked, remove the squished class
+    // and make the magnifying stick disappear behind the searchBar
+    if (searchBar.className.includes("squishedSearchBar")) {
+    	searchBar.className = searchBar.className.replace("squishedSearchBar", "");
+    	magnifyingGlassStick.style.width = "0px";
+    };
 
-
-
-//when you click the start button, it disappears, and the searchBar widens from behind.
-//When the user searches into the searchbar, the searchBar moves to the top.
-// Start building the project from a static searchBar at the top. Build the javascript first before CSS
+});

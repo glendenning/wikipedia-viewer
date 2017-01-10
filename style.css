@@ -5,6 +5,46 @@ html {
 	text-align: center;
 }
 
+/* Initial State of the Page */
+.squishedSearchBar {
+ 	background: lightgrey !important;
+	width: 40px !important; /* Important overrides the id properties of the element */
+	cursor: pointer !important; /* Makes the cursor a hand when hovered over */
+}
+.centeredCross {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hidden {
+	visibility: hidden !important;
+}
+.centeredSearchBar {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#magnifyingGlassStick {
+	position: fixed;
+	top: 52%;
+	left: 49.5%;
+	transform: translate(-50%, -50%);
+	transform: rotate(45deg);
+	background: orange;
+	height: 8px;
+	width: 50px;
+	border-radius: 10px;
+	transition: all 0.7s;
+}
+.clicktostartsearch {
+	display: inline-block;
+	margin-top: 20%;
+	font-size: 25px;
+}
+
+/* Standard Page */
 #searchBar {
 	width: 400px;
 	height: 40px;
@@ -12,8 +52,9 @@ html {
 	text-align: center;
 	border: 6px solid orange;
 	border-radius: 40px;
+	transition: all 0.7s;
 }
-#searchBar:focus {
+#searchBar:focus { /* Removes the default blue glowing border around text-input area */
 	outline: none;
 }
 #quitSearchCross {
@@ -21,6 +62,7 @@ html {
 	color: red;
 	transform: scale(1.5);
 }
+
 
 ul {
 	height: 10%;
@@ -38,8 +80,6 @@ li {
 li:hover {
 	border-left: 8px solid orange;
 }
-
-
 a {
 	color: black;
 	text-decoration: none; /* */
