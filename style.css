@@ -14,14 +14,16 @@ html {
 }
 
 #wikiLogo {
-	position: fixed;
-	z-index: 2;
+	padding-right: 10%;
+	padding-bottom: 5%;
+
+	margin: -10%;
 	left: 20%;
 	top: 0%;
 	height: auto;
 	width: auto;
-	max-height: 20%;
-	max-width: 20%;
+	max-height: 15%;
+	max-width: 15%;
 }
 
 /* Initial State of the Page */
