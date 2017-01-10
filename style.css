@@ -5,11 +5,22 @@ html {
 	text-align: center;
 }
 
+.heading {
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    padding: 20px;
+    background-color: grey;
+}
+
 /* Initial State of the Page */
 .squishedSearchBar {
  	background: lightgrey !important;
 	width: 40px !important; /* Important overrides the id properties of the element */
 	cursor: pointer !important; /* Makes the cursor a hand when hovered over */
+}
+.initiallyHidden {
+	visibility: hidden !important;
 }
 .centeredCross {
   position: fixed;
@@ -17,9 +28,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.hidden {
-	visibility: hidden !important;
-}
+
 .centeredSearchBar {
 	position: fixed;
 	top: 50%;
@@ -38,10 +47,11 @@ html {
 	border-radius: 10px;
 	transition: all 0.7s;
 }
-.clicktostartsearch {
-	display: inline-block;
-	margin-top: 20%;
+#clicktostartsearch {
+	position: relative;
+	top: 100px;
 	font-size: 25px;
+
 }
 
 /* Standard Page */
@@ -57,30 +67,36 @@ html {
 #searchBar:focus { /* Removes the default blue glowing border around text-input area */
 	outline: none;
 }
-#quitSearchCross {
-	position: relative;
-	color: red;
-	transform: scale(1.5);
-}
 
 
-ul {
+#searchResults {
 	height: 10%;
 	width: 78%;
 	text-align: left;
 	list-style: none;
 	margin: 0 auto;
+	opacity: 0;
+	transition: all 0.7s ease-in-out;
 }
-li {
+#searchResults li {
 	background-color: white;
 	border: 8px solid white;
 	padding: 0.5%;
 	margin: 1%;
 }
-li:hover {
+#searchResults .title {
+	font-weight: bold;
+}
+#searchResults li:hover {
 	border-left: 8px solid orange;
 }
 a {
 	color: black;
-	text-decoration: none; /* */
+	text-decoration: none;
 }
+a:focus {
+	transform: scale(0.9);
+}
+
+
+
