@@ -26,7 +26,7 @@ function search() {
       	const pageTitles = data[1];
       	const pageDescriptions = data[2];
       	const pageHyperlinks = data[3];
-      	
+
       	searchResults.style.opacity = 0;
       	displaySearchResults(searchedQuery, pageTitles, pageDescriptions, pageHyperlinks);
       	searchResults.style.opacity = 1;
@@ -39,8 +39,6 @@ function search() {
 };
 
 function displaySearchResults (query, titles, descriptions, hyperlinks) {
-
-	
 
 	var searchResultsString = "";
 	for (var i=0; i < titles.length; i++) {
@@ -55,7 +53,6 @@ function displaySearchResults (query, titles, descriptions, hyperlinks) {
 		`;
 		searchResultsString += wikipediaItemString;
 	}
-
 	
     youSearchedFor.className = ""
 	youSearchedFor.visibility = "visible";
@@ -63,8 +60,6 @@ function displaySearchResults (query, titles, descriptions, hyperlinks) {
 
 	youSearchedFor.innerHTML = "You Searched For \""+query+"\"";
 	searchResults.innerHTML = searchResultsString;
-
-	searchResults.style.opacity = 1;  //changing opacity from 0 to 1 allows it to fade in.
 
 };
 
@@ -95,7 +90,7 @@ searchBar.addEventListener("click", function(event) {
     if (searchBar.className.includes("squishedSearchBar")) {
     	searchBar.className = searchBar.className.replace("squishedSearchBar", "");
     	magnifyingGlassStick.style.width = "0px";
-    	clickToStartTheSearch.innerHTML = "Enter a Search Term to Search Wikipedia"
+    	clickToStartTheSearch.innerHTML = "Enter a Search Term to Search Wikipedia, and press enter"
     };
 
 });
