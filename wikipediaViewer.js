@@ -11,8 +11,6 @@ function search() {
 
 	const query = searchBar.value;
 	myURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+query+"&format=json&callback=?";
-	console.log(myURL);
-
 
     $.ajax({
       url: myURL,
